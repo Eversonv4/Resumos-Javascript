@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Operadores lógicos em Javascript</title>
+	</head>
+	
+	<body>
+		<audio controls>
+			<source src="D:\Musicas\Gojira\Gojira-Magma\04 Stranded.mp3" type="audio/mpeg">
+		</audio>
+	
+		<script>
+			// operador AND (&&)
+			var x = 4, y = 2;
+			
+			var resultado = (x < 5 && y > 1); // resultado TRUE, tudo é verdadeiro
+			resultado = ( x > 5 && y > 1); // resultado false, pois uma das condições é false
+			
+			// operador OR (||)
+			var resultado2 = (x > 5 || y > 1); // true, pois uma das condições é verdadeira.
+			
+			//operador NOT (!)
+			var resultado3 = !(x==y); // true, pois x==y é falso, mas o operador ! devolve o oposto do resultado original.
+			
+			alert(resultado3);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Operadores de tipos em Javascript </title>
+	</head>
+	
+	<body>
+		<script>
+			//TYPEOF: nos devolve o tipo de dado de uma variável ou dado
+			var caracteres = "Everson Vinicius"; // STRING
+			var numero = 3.14; // NUMBER
+			var booleano = true; // BOOLEAN
+			var lista = [1, 2, 3, 4]; // OBJECT, pq array é um tipo de objeto javascript
+			var registro = { nome:"Everson", sobrenome:"Vinicius"}; // OBJECT
+			var data = new Date; // OBJECT
+			var minhaFuncao = function miFuncao() { alert("Olá"); }; // FUNCTION
+			var semDefinir; // UNDEFINED
+			var vazia = null; // NULL
+			
+			alert(typeof "something");
+			
+			
+			//INSTANCEOF: nos devolve true se um objeto é uma instancia de outro objeto especificado
+			// O resultado que esse operador nos dá é BOOLEAN, true ou false
+			var animais = [ "Cachorro", "Gato", "Pato" ];
+			
+			alert(animais instanceof Object); // TRUE
+			alert(animais instanceof Array); // TRUE
+			alert(animais instanceof Number); // FALSE
+			alert(animais instanceof String); // FALSE
+			
+		</script>
+	</body>
+</html>
