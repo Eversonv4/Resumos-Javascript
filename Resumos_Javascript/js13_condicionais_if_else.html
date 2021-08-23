@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Condicionais. Sentenças if...else</title>
+	</head>
+	
+	<body>
+		<script>
+			// IF: especifica um bloco de códigos que se executa se uma condição for verdadeira.
+			/*
+				Sintaxe: 
+				if (<condição>) {
+					- Instruções se a condição for verdadeira
+				}
+			*/
+			
+			
+			var nota = 8;
+			if (nota >= 5) {
+				alert("Aprovado");
+			}
+			
+			
+			// Else: especifica uma bloco de código que se executa se uma condição for falsa.
+			/*
+				Sintaxe:
+				if (<condiçao>) {
+					- Instrução se a condição for verdadeira.
+				} else { 
+					Instrução se a condição for falsa.
+				}
+			*/
+			
+			
+			var nota2 = 4;
+			if (nota2 >=5) {
+				alert("Aprovado");
+			} else {
+				alert("Reprovado");
+			} 			
+			
+			
+			// Else If: especifica uma condição se a primeira for falsa.
+			/*
+				if (<condição>) {
+					- Instrução se a condição for verdadeira.
+				} else if (<condição2>) {
+					// Instruções se a condição 1 é falsa e a segunda for verdadeira.
+				} else (<condição3>) {
+					// Instrução se a condição 1 e 2 forem falsas e a terceira for verdadeira.
+					// dá para fazer vários else if. Esse último else apenas, marca o fim da estrutura condicional.
+				}
+			*/
+			
+			var nota3 = 9;
+			if (nota3 < 5) {
+				alert("Reprovado");
+			} else if (nota3 == 5) {
+				alert("Acertou o suficiente");
+			} else if (nota3 == 6) {
+				alert("Se saiu bem");
+			} else if (nota3 == 7 || nota3 == 8) {
+				alert("Notável!");
+			} else {
+				alert("Impecável");
+			}
+		</script>
+	</body>
+</html>

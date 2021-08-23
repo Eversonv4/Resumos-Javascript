@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Saltos: Sentenças BREAK e CONTINUE</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				BREAK: saltar ou sair de um loop, FINALIZANDO-O.
+				CONTINUE: pula para a próxima interação do loop; pular uma ou mais interações.
+			*/
+		/*	
+			// Exemplo de loop com BREAK.
+			var i = 0;
+			for (i = 0; i < 10; i++){
+				if (i == 3) {
+					break;
+				}
+				alert("i = " + i);
+			}
+		*/	
+		
+		/*
+			// Exemplo de loop com CONTINUE.
+			var j = 0;
+			for (j = 0; j < 10; j++){
+				if (j == 3 || j == 5) {
+					continue;
+				}
+				alert("j = " + j);
+			}
+		*/	
+			/* 
+				Rótulos/Tags: Preceder uma instrução com o nome da tag seguido por dois pontos. 
+				- Break Sem tags pode utilizar em loops (estruturas de repetição) ou switch.
+				- Break Com tags também pode usá-lo em um bloco de sentenças desde que rotulado ("tagueado?!").
+				- Continue: A tag é opcional e sempre deve estar dentro de um loops (estrutura de repetição).
+			*/
+		
+		/*
+			// Exemplo de break com tag.
+			var animais = ["cachorro", "gato", "coelho"];
+			
+			ver_animais: 
+			{
+				alert(animais[0]);
+				alert(animais[1]);
+				break ver_animais;
+				alert(animais[2]);
+			}
+		*/
+		
+			// Exemplo de continue com tag
+			var k = 0;
+			loop:
+			for (k = 0; k < 10; k++){
+				if (k == 3 || k == 5) {
+					continue loop;
+				}
+				alert("k = " + k);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: Location</title>
+	</head>
+	
+	<body>
+		<p id="location"></p>
+		<script>
+			/*
+				CARACTERÍSTICAS:
+				- Guarda informação da URL atual.
+				- Não é um padrão, mas a maioria dos navegadores suportam esse objeto
+			*/
+			
+			// PROPRIEDADE DE OBJETO LOCATION
+			var texto = "";
+			// - href: HREF (URL) da página
+			texto += "<br/>Href: " + location.href;
+			
+			// - hostname: nome do host da página
+			texto += "<br/>Hostname: " + location.hostname;
+			
+			// - pathname: nome do caminho da página
+			texto += "<br/>Pathname: " + location.pathname;
+			
+			// - hash: define ou retorna a parte âncora(#) de uma página. especialmente usado em páginas com muitos textos e precisamos separá-las por seções, coisas desse tipo. (Exemplo: www.web.com/index.html#indice)
+			texto += "<br/>Hash: " + location.hash;
+			
+			// - host: devolve o nome do host e a porta.
+			texto += "<br/>Host: " + location.host;
+			
+			// - origin: devolve o nome do protocolo, hostname e a porta.
+			texto += "<br/>Origin: " + location.origin;
+			
+			// - search: string de consulta da página. (Exemplo: www.web.com/index.html?user=ada)
+			texto += "<br/>Search: " + location.search;
+			
+			document.getElementById("location").innerHTML = texto;
+			
+			// MÉTODOS DO OBJETO LOCATION
+			// - assign(<URL>): atribui um novo documento à página.
+			function novoDocumento(){
+				location.assign("http://www.google.com");
+			}
+			
+			// - reload(): recarrega a página.
+			function recarrega() {
+				location.reload();
+			}
+			
+			// - replace(<URL>): substitui a página por outra. Porém, desaparece seu histórico, ela aparece como se fosse uma nova janela. replaces the current document with a new one.
+			function substitui() {
+				location.replace("http://www.google.com");
+			}
+		</script>
+		<button onclick="novoDocumento()">Carrega um novo documento</button>
+		<button onclick="recarrega()">Recarrega a página</button>
+		<button onclick="substitui()">Substitui a página</button>
+	</body>
+</html>

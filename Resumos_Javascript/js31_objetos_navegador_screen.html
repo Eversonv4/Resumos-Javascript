@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: Screen</title>
+	</head>
+	
+	<body>
+		<p id="tela"></p>
+		<script>
+			/*
+				CARACTERÍSTICAS:
+				- Contém a informação da janela do visitante.
+				- Não é um padrão, mas a maioria dos navegadores suportam Screen.
+			*/
+			
+			// PROPRIEDADES DO OBJETO SCREEN
+			var texto = "";
+			
+			// - height/width: Tamanho da tela/resolução do monitor do usuário. no meu caso 1920 e 1080
+			texto += "<br/>Largura: " + screen.width;
+			texto += "<br/>Altura: " + screen.height;
+			
+			// - availHeight/availWidth :Tamanho da tela sem a barra de tarefas
+			texto += "<br/>Largura sem a barra: " + screen.availWidth;
+			texto += "<br/>Altura sem a barra: " + screen.availHeight;
+			
+			// - colorDepth: Profundidade de cor da tela.
+			texto += "<br/>Profundidade: " + screen.colorDepth;
+			
+			// - pixelDepth: Resolução de cores em bits por pixel
+			texto += "<br/>Resolução: " + screen.pixelDepth;
+			
+			document.getElementById("tela").innerHTML = texto;
+		</script>
+	</body>
+</html>

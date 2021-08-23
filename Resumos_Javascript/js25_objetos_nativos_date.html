@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos Nativos: Date</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				CRIAÇÃO DE OBJETOS DO TIPO DATE.
+				Obs: os meses começam em zero, os dias da semana também, sendo 0 o domingo e 1 a segunda-feira...
+			*/
+			/*
+				// Criação de data atual:
+				var atual = new Date();
+				alert(atual);
+				
+				// Criando datas com string: maneiras diferentes de invocar as datas.
+				var d1 = new Date("Wed Mar 25 2015 09:23:25 GMT-0300 (Horário Padrão de Brasilia)"); 
+				var d2 = new Date("October 12, 2016 10:30:00"); 
+				var d3 = new Date("January 25 2015");
+				var d4 = new Date("Jan 25 2015");
+				alert(d1);
+				alert(d2);
+				alert(d3);
+				alert(d4);
+				
+				// Podemos usar vírgula porque elas são ignoradas
+				var d5 = new Date("2021-08-17T02:26:25");
+				var d6 = new Date("2021-08-17"); // YYYY-MM-DD
+				var d7 = new Date("2021/08/17"); // YYYY/MM/DD ou DD/MM/YYYY
+				var d8 = new Date("2021-08"); // O dia é substituído por 1
+				var d9 = new Date("2021"); // O dia e o mês são substituídos por 1
+				
+				// OBS! incluimos 0 em dias e meses inferiores a 10
+				alert(d5);
+				alert(d6);
+				alert(d7);
+				alert(d8);
+				alert(d9);
+				
+				// Criando datas com milisegundos
+				var miliseg = new Date(86400000);
+				alert("A data em milisegundos: " + miliseg);
+				
+				
+				// Criação de datas com números. Esse jeito de escrever as datas é meio bugado, usar as outras formas... melhor
+				var dataLonga = new Date(2021,08,17,02,56,12); // ano, mês, dia, hora, minuto, segundos. 
+				var dataCurta = new Date(2021,08,17); // ano, mês, dia
+				alert(dataLonga);
+				alert(dataCurta);
+			
+			
+				var data = new Date();
+				alert("Data: "+data); // cria um objeto data com a data atual pegando a data e hora do pc no momento em que foi executado.
+				alert("toString: "+data.toString()); // converte um objeto data em uma string.
+				alert("toUTCString: "+data.toUTCString()); // converte um objeto data em uma string de acordo com a hora universal
+				alert("toDateString: "+data.toDateString()); // Converte a parte da data de um objeto Date em uma string legível. é o mais simpleszinho.
+				
+				
+				// MÉTODOS GET: serve para extrair de uma data algum campo particular, ano, mês, ano, etc.
+					// - getDay(): devolve o dia da semana, de 0 a 6 (de domingo, sendo 0, até sábado, 6).
+					// - getDate(): devolve o dia do mês, de 1 a 31.
+					// - getMonth(): devolve o mês, de 0 a 11 (janeiro, sendo 0, até dezembro, 11).
+					// - getFullYear(): devole o ano.
+					// - getHours(): devolve a hora, de 0 a 23.
+					// - getMinutes(): devolve os minutos, de 0 a 59.
+					// - getSeconds(): devolve os segundos, de 0 a 59.
+					// - getMilliseconds(): devolve os milisegundos, de 0 a 999.
+					// - getTime(): devolve o número de milisegundos que se passaram desde meia noite de 1 de Janeiro de 1970, até uma data especificada.
+				
+				var dt = new Date("August 17, 2021 15:14:05");
+				alert(dt.getDay() + " " + dt.getDate() + "/" + dt.getMonth() + "/"+ dt.getFullYear());
+				alert(dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds() + ":" + dt.getMilliseconds());
+				alert("Milisegundos desde 01/01/1970: " + dt.getTime());
+			*/	
+				
+				// MÉTODOS SET
+				var dt = new Date("August 17, 2021 15:14:05");
+				dt.setDate(31);
+				dt.setMonth(11);
+				dt.setFullYear(2031);
+				dt.setHours(23);
+				dt.setMinutes(59);
+				dt.setSeconds(59);
+				dt.setMilliseconds(59);
+				//dt.setTime(<milisegundos>); Modificaríamos a data e a hora contando os milisegundos desde 1/1/1970
+				alert(dt.toString());
+				
+				
+				// Exemplo de cálculo de horas
+				dt.setMonth(dt.getMonth() + 3);
+				alert(dt.toString());
+				
+				
+		</script>
+	</body>
+</html>

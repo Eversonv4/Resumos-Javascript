@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos: Construtores integrados</title>
+	</head>
+	
+	<body>
+		<script>
+			// Usar os objetos nativos é muito mais rápido.
+			// 1 - String:
+			var x1 = new String(); // Não é conveniente usar esse objeto string.
+			var y1 = "Everson Vinicius"; // Assim é muito mais simples.
+			
+			// 2 - Number:
+			var x2 = new Number(); // Não é conveniente usar isso.
+			var y2 = 3.14; // Assim é muito mais simples.
+			
+			// 3 - Boolean:
+			var x3 = new Boolean(); // Não é conveniente usar isso.
+			var y3 = true; // Assim é muito mais simples.
+			
+			// 4 - Array:
+			var x4 = new Array(); // Não é conveniente usar isso.
+			var y4 = []; // Assim é muito mais simples.
+			
+			// 5 - RegExp:
+			var x5 = new RegExp(); // Não é conveniente usar isso.
+			var x5 = /()/; // Assim é muito mais simples.
+			
+			// 6 - Function:
+			var x6 = new Function(); // Não é conveniente usar isso.
+			var y6 = function (); // Assim é muito mais simples.
+			
+			// 7 - Date:
+			var x7 = new Date();
+			
+			// 8 - Math: Não se pode declarar com "new" porque já é um objeto em javascript.
+			
+			// 9 - Object
+			var x8 = {};
+		</script>
+	</body>
+</html>

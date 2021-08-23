@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Escopos de Variáveis</title>
+	</head>
+	
+	<body>
+		<script>
+			// Variáveis Locais
+			/* 
+				- Se definem dentro de uma função.
+				- Tem âmbito local na função.
+				- São acessíveis apenas dentro da função.
+				- Podemos declarar variáveis com mesmo nome em diferentes funções.
+				- Variável local desaparece quando termina a execução da função.
+			*/
+			function cumprimentar() {
+				var saudacao = "Olá!";
+				alert(saudacao);
+			}
+			cumprimentar();
+			
+			// Variáveis Globais
+			/*
+				- Se definem fora das funções.
+				- Tem âmbito global (em toda a página).
+				- São acessíveis tanto fora quanto dentro das funções.
+				- Variáveis globais desaparecem quando se saem da página.
+			*/
+			var despedida = "Adeus";
+			function despedir() {
+				alert(despedida);
+			}
+			despedir();
+			
+			// Variáveis Automaticamente Globais
+			/*
+				- Se atribuirmos um valor a uma variável não declarada, ela se torna global.
+			*/
+			function perguntar() {
+				pergunta = "Qual a cor do cavalo branco de são jorge?";
+			}
+			perguntar();
+			alert(pergunta);
+			
+			// Variáveis Locais e Globais com o mesmo nome.
+			// quando chamamos uma variável de mesmo nome dentro de uma função estamos referenciando apenas dentro da função.
+			var minhaVariavel = "Fora";
+			function ambito() {
+				var minhaVariavel = "Dentro";
+				alert(minhaVariavel);
+			}
+			alert(minhaVariavel); // Devolve fora
+			ambito(); // Devolve dentro
+			alert(minhaVariavel); // Devolve fora
+			
+			// Variável Global definida dentro de uma função
+			var minhaVariavel2 = "Fora";
+			function ambito2() {
+				minhaVariavel2 = "Dentro";
+				alert(minhaVariavel2);
+			}
+			alert(minhaVariavel2); // Devolve fora
+			ambito2(); // Devolve dentro
+			alert(minhaVariavel2); // Devolve dentro
+		</script>
+	</body>
+</html>

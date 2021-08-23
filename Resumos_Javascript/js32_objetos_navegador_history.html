@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: History</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				CARACTERÍSTICAS:
+				- Guarda informação das UTLs visitadas pelo usuário dentro de uma janela no navegador.
+				- Não tem um padrão, mas a maioria dos navegadores suportam esse objeto.
+			*/
+			
+			// PROPRIEDADE DO OBJETO HISTORY
+			// - length: número de URLs no histórico da página.
+			alert("URLs do histórico: " + history.length);
+			
+			// MÉTODO DO OBJETO HISTORY
+			// - back(): carrega a URL anterior no histórico.
+			function atras() {
+				history.back();
+			}
+			
+			// - forward(): carrega a URL seguinte no histórico.
+			function adiante() {
+				history.forward();
+			}
+			
+			// - go(<número/URL>); vai para uma página específica do histórico. Se indicarmos um número positivo, vai para as páginas à diante um certo número de páginas; se indicarmos um número negativo, faz a mesma coisa, só que com páginas anteriores.
+			// Se indicarmos uma URL ou parte dela, vai direto para a URL especificada.
+			function ir() {
+				var numero = prompt("Indica um número para mover no histórico.");
+				history.go(numero);
+			}
+			
+		</script>
+		<button onclick="atras()">Atrás</button>
+		<button onclick="adiante()">Adiante</button>
+		<button onclick="ir()">Ir para uma página</button>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Repetições: loop FOR</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				Sintaxe:
+					for (<sentença_1>); <senteça_2>; <sentença_3>) {
+						// Código que se repete.
+					}
+				- Sentença 1: Ele é executado antes do início do bloco de código de repetição. 
+				- Sentença 2: Define a condição pela qual o bloco de código deve ser executado. 
+				- Sentença 3: Se executa depois que acaba o bloco de código repetir.
+			*/
+			
+			var i;
+			for (i = 1; i <= 5; i++) {
+				alert("i = " + i);
+			}
+			
+			/*
+				Variações
+				1 - Se omitirmos a primeira declaração, devemos ter inicializado a variável de antemão.
+			*/
+			var j = 1;
+			for ( ; j <= 5; j++) {
+				alert("j = " + j);
+			}
+			
+			/*
+				2 - Se omitirmos a segunda sentença, dentro do código a repetir, devemos incluir uma instrução break.
+			*/
+			var k;
+			for (k = 1 ; ; k++){
+				alert("k = " + k);
+				if (k == 5) {
+					break;
+				}
+			}
+			
+			/*
+				3 - Se omitirmos a terceira sentença, devemos incrementar ou decrementar o valor da variável dentro do ciclo.
+			*/
+			var l;
+			for ( l = 1; l <= 5 ; ) {
+				alert("l = " + l);
+				l++;
+			}
+			
+			/*
+				4 - Podemos trabalhar com dois ou mais valores dentro do ciclo for.
+			*/
+			var m, n;
+			for (m =1, n=10; m<=10, n>=1; m++, n--) {
+				alert("m = " + m + ", n = " + n); 
+			}
+		</script>
+	</body>
+</html>

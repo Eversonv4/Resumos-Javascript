@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Condicionais. Senteças SWITCH</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				SWITCH:
+				- Se utiliza para fazer diferentes ações baseadas em diferentes condições.
+				- A condição se valida apenas uma vez.
+				- Se houver uma correspondência com um valor, o bloco de código correspondente é executado.
+				- A instrução break; sai do bloco switch
+			*/
+			
+			/*
+				Sintaxe:
+				switch (<expressão>) {
+					case valor_1:
+						// Instruções para valor_1.
+						break;
+					case valor_n:
+						// Instruções para valor_n.
+						break;
+					default:
+						// Instruções para o caso de que não se cumpra nenhuma das condições anteriores.
+				}
+			*/
+			
+			var nota = 10;
+			var mensagem = "";
+			switch (nota) {
+				case 0:
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+					mensagem = "Reprovado";
+					break;
+				case 5:
+					mensagem = "Suficiente";
+					break;
+				case 6:
+					mensagem = "Bom";
+					break;
+				case 7:
+				case 8:
+					mensagem = "Muito bem";
+					break;
+				case 9:
+					mensagem = "Impecável";
+					break;
+				case 10:
+					mensagem = "Perfeito";
+					break;
+				default:
+					mensagem = "Erro de nota";
+			}
+			alert(mensagem);
+		</script>
+	</body>
+</html>

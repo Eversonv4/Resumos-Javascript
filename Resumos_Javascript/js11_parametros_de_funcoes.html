@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Parâmetros de Funções </title>
+	</head>
+	
+	<body>
+		<script>
+			/* Parâmtros e Argumentos
+				- Função pode ter zero ou mais parâmetros.
+				- Parâmetros são os nomes que aparecem na definição de uma função.
+				- Argumentos são os valores que passamos (e que se recebe) a uma função.
+				
+				Regras dos parâmetros:
+				- Não se especifica o tipo dos parâmetros.
+				- Não se verifica os tipos dos argumentos.
+				- Não se comprova o número dos argumentos recebidos.
+			*/
+			/* Parâmetros por padrão
+				Quando chamamos uma função com menos argumentos do que foram declarados. 
+				Os valores que faltam estão definidos
+			*/
+				function soma (a, b) {
+					if (b === undefined)
+						b = 0;
+					return a + b;
+				}
+				
+				var resultado = soma (4);
+				alert(resultado);
+				
+			// Parâmetros em excesso
+			// Quando chamamos uma função com mais argumentos do que foram declarados...
+			//... Os valores que chegam até nós podem ser capturados por meio de um objeto (incluído na função) chamado "arguments".
+			// Por mais que não seja tão claro, os parâmetros passados em funções são como espaços em um array [ a , b] = function(a, b). tipo isso.
+			// "arguments" é como se fosse um array=objeto, dá para invocar elementos dele usando arguments[i] ou arguments.length.
+			function valores() {
+				alert ("Os números de argumentos são " + arguments.length);
+				for (var i=0; i < arguments.length; i++) {
+					alert("Argumento " + i + " = " + arguments[i]);
+				}
+			}
+			valores( 1 , 2 , 5 , 6, "Everson", 999 );
+		</script>
+	</body>
+</html>

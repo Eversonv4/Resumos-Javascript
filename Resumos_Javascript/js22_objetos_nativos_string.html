@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos nativos: String</title>
+	</head>
+	
+	<body>
+		<script>
+			// INSTÂNCIAÇÂO de uma string.
+			var daw = "Desenvolvimento de aplicações web";
+			var dam = 'Desenvolvimento de aplicações multiplataformas';
+			var asir = "Administração de 'sistemas de computadores' em rede";
+			var smr = "Sistemas \"Microcomputadores\" e redes";
+			var ciclos = new String("");
+			/* Essas barras inclinadas para a esquerda são chamados de "Caracteres de Escape", 
+			nessa situação da var smr, ele desconsidera os caracteres anteriores, no caso as aspas
+			permitindo que nós possamos usar aspas duplas na palavra microcomputadores, sem conflitar
+			com as apas da string principal. e o "\n" serve pra pular linha, é tipo o <br> do HTML. 
+			e ele tem que estar dentro da string principal*/
+			
+			
+			
+			// CONCATENAÇÂO de Strings.
+			ciclos += "Existem 3 ciclos de grau superior: \n";
+			ciclos += daw + ", " + dam + " e " + asir + "\n";
+			ciclos += " e 1 ciclo de grau médio: \n";
+			ciclos += smr ;
+			
+			alert(ciclos);
+			 
+			// PROPRIEDADES
+			// - length: devolve o tamanho da string, quantos caracteres têm.
+			
+			alert("O tamanho da string ciclos é :" + ciclos.length);
+			
+			// MÉTODOS:
+			
+			// ** Busca ** : 
+			// - charAt(<num>): devolve o caractere de uma posição específica.
+			alert("O caractere 15 da string ciclos é: " + ciclos.charAt(15));
+			
+			// - indexOf(<caractere>): devolve a primeira posição de um caractere de uma string. SERVE PARA BUSCAR PALAVRAS TAMBÉM, FRASES, etc, 
+			// mas obviamente que ele só devolve a primeira posição da string que se procura.
+			alert("A primeira aparição da letra E em ciclos é: " + ciclos.indexOf("a")); // ele começa a contar a partir de 0, 1, 2, ... javascript é assim.
+			
+			// - lastIndexOf(<caractere>): devolve a última posição de um caractere em uma string. SERVE PARA BUSCAR PALAVRAS TAMBÉM, FRASES, etc.
+			// mas obviamente que ele só devolve a primeira posição da string que se procura.
+			alert("A última aparição da letra A em ciclos é: " + ciclos.lastIndexOf("a"));
+			
+			// - search(<string|expressão>): busca uma string ou expressão regular em outra string.
+			// também só devolve a primeira posição da string que se procura.
+			alert("Busque a string 'web' na variável daw: " + daw.search("web"));
+			
+			// - match(<expressão regular>): busca uma expressão regular em outra string.
+			
+			
+			// ** Comparação ** :
+			// - localeCompare(<caracteres/string>): devolve -1 (antes), 0 (igual), 1 (depois). Compara duas strings no mesmo local.
+			alert("É daw menor que dam? " + daw.localeCompare(dam));
+			
+			// INCLUI, COMEÇA OU TERMINA
+			// - includes(<caracteres>): devolve VERDADEIRO (ou FALSO) se na string tem o parâmetro enviado("caracteres").
+			alert("Tem a palavra 'aplicações' na variável daw? " + daw.includes("aplicações"));
+			
+			// - startsWith(<caracteres>): devolve VERDADEIRO (ou FALSO) se a string começa com o parâmetro enviado ("caracteres").
+			alert("A variável daw começa com a palavra 'aplicações' ? " + daw.startsWith("aplicações"));
+			
+			// - endsWith(<caracteres>): devolve VERDADEIRO (ou FALSO) se a string termina com o parâmetro enviado ("caracteres").
+			alert("A variável daw termina com a palavra 'aplicações' ? " + daw.endsWith("aplicações"));
+	
+			
+			// CONCATENAÇÂO E REPETIÇÂO
+			// - concat(<caracteres>): concatena a string com o parâmetro(caracteres).
+			alert("Concatena daw com dam: \n" + daw.concat(dam));
+			
+			// - repeat(<número>): repetir a string quantas vezes foram passadas em parâmetro. a mesma string aparece um certo
+			//número de vezes, meio que unidas ex. se a string fosse "abc" e fosse colocado para repetir 3x, teríamos "abcabcabc"
+			alert("Repetir daw \n " + daw.repeat(3));
+		
+		
+			// EXTRAÇÂO (de caracteres de uma string)
+			// - slice(<posição inicial>,<posição final>): devolve um intervalo de caracteres dentro de uma string. AS POSIÇÕES SÃO EM NÚMEROS.
+			//outro detalhe: ele devolve o caractere da posição inicial, os que estão entre um e outro, mas não devolve o caractere da posição final final. (em matemática seria equivalente a um intervalo [a, b) )
+			alert("Os caracteres que estão entre a posição 4 e 6 na variável daw é: " + daw.slice(4,6));
+			alert("A primeira letra da variável daw é: " + daw.slice(0,1));
+			
+			// Se quisermos que ele devolve os caracteres a partir de uma posição e o restante, passamos como parâmetro somente o inicial
+			// - slice(<posição inicial>):
+			alert("Os caracteres que têm na variável daw a partir da posição 4 é: " + daw.slice(4));
+			
+			// Se quisermos saber qual caractere é o último da string, usamos como parâmetro -1.
+			// slice(<-1>): ele devolve o último caractere da string.
+			alert("O último caractere de daw é : " + daw.slice(-1) );
+			
+
+			// - substring(<posição inicial>,<posição final>): faz a mesma coisa que o método slice, inclusive os parâmetros são os mesmos.
+			// ** mas tem uma particularidade, para acessar o último caractere, não pode passar como parâmetro o -1. é preciso fazer de outra forma.
+			// ** usa-se o comprimento da string menos 1, para conseguir devolver o caractere da última posição.
+			alert(daw.substring( daw.length - 1 ));
+			
+			// ** ao contrário de slice, que dava a primeira posição, o que tinha entre, menos a posição final...
+			// ** o método substring só devolve o que existe entre um parâmetro e outro. (em matemática seria equivalente a um intervalo (a, b) )
+			alert(daw.substring(30, 33));
+			
+		
+			// - substr(<posição inicial>,<comprimento de string desejado>): ele devolve um pedaço de string a partir de uma posição desejada, e com um tamanho espefícico.
+			// por exemplo, se quiser extrair uma strig de 8 caracteres, começando da posição 3, fazemos:
+			alert(daw.substr(3, 8));
+			
+			// ** Dá para passar como parâmetro -1, e passar 1 como parâmetro de comprimento e assim obter o último caractere da string.
+			alert(daw.substr(-1, 1));
+			
+			// ** Se passar números maiores que a quantidade de caracteres da string, tanto referente a posição e/ou quanto ao comprimento. vai devolver uma string vazia.
+			alert(daw.substr(300, 200)); // empty string
+			
+			// ** Se começar com posição negativa (-3, ou -5, ou -8, etc.), o método vai usar essa posição negativa como inicial e vai ignorar totalmente o parâmetro de comprimento.
+			alert(daw.substr(-3, 5)); // vai devolver da posição -3 até o fim da string. sendo a posição -1 o último caractere.
+		
+			
+			// - split( <caractere/"SEPARADOR"> , <número/"LIMITE"> ): ele transforma a string é um array, separando com base no parâmetro enviado, se mandármos um espaço como parâmetro, onde tiver espaço ele quebra
+			//para formar um item do array. o limite serve para dizer até quantos elementos separar em array. se não passar parâmetro, ele vai separar em todo lugar onde tiver o caractere separador.
+			//na frase "oi meu nome é everson". se colocar para separar onde tiver espaço " " e o limite for três, ele vai me dar um array de 3 elementos [ oi , meu , nome ] e ignorar o resto da string
+			let str = "oi meu nome é everson";
+			const meuArray = str.split(" ", 3);
+			alert(meuArray); // devolve [ oi , meu , nome ]
+			
+			// ** Se passar como parámetro uma string vazia, ele vai separar cada caractere como sendo um elemento do array.
+			const meuArray2 = str.split("");
+			alert(meuArray2); // devolve [ o,i, ,m,e,u, ,n,o,m,e, ,é, ,e,v,e,r,s,o,n ]
+			
+			
+			// - trim(<string>): Não precisa passar parâmetros, esse método simplesmente retira os espaços em brado do fim e do início de uma string.
+			//Ex. "    bom, dia!    "  --> "bom, dia!". é basicamente isso que ela faz. parece besta, mas é útil em formulários.
+			alert("Uma string sem espaços terminaria: \n" + "             Olá, xuxu           ".trim());
+			
+			
+			// MAIÚSCULAS E MINÚSCULAS
+			// - toLowerCase(): devolve a string em letras minúsculas.
+			alert(daw.toLowerCase());
+			
+			// - toUpperCase(): devolve toda a string em letras maiúsculas.
+			alert(daw.toUpperCase());
+			
+			
+			// MÉTODOS ESPECIAIS:
+			// toString: devolve o valor do objeto string. bastante usado com números, onde queremos o número, mas como sendo caractere e não número em si.
+			// valueOf: devolve o valor primitivo do objeto. 
+		</script>
+	</body>
+</html>

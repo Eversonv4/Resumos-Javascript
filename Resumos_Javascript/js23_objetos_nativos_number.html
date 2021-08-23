@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos Nativos: Number</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				CARACTERÍSITCAS:
+				- Só há um tipo de dado numérico.
+				- Podemos representar: 34, 34.05, 123e4, 123e-4, 0xFF.
+			*/
+		/*	
+			// Mudança de base entre números: 
+			// - toString() : converte um número decimal em binário, hexadecimal, octal, etc.
+			var base10 = 128;
+			alert(base10 + "em base 2 é " + base10.toString(2));
+			alert(base10 + "em base 8 é " + base10.toString(8));
+			alert(base10 + "em base 16 é " + base10.toString(16));
+			
+			// INFINITO e -INFINITO: Infinity, -Infinity
+			var inf = 2;
+			while (inf != Infinity) {
+				alert(inf);
+				inf = inf*inf; //inf *= inf;
+			}
+			
+			var div1 = 2, div2 = 0;
+			alert("Divisão de 2 por 0 = " + 2/0); // devolve "Infinity"
+			alert("Divisão de 2 por 0 = " + (-2/0)); // devolve "-Infinity"
+			alert("Typeof: " + (div1/div2)); // seu tipo é Infinity
+			
+			// NOT A NUMBER: NaN
+			var atipico = 100 / "casa"; // aqui dá NaN
+			var atipico2 = 100 / "10"; // aqui o javascript reconhece que tem um número na string
+			alert("100 / 'casa' " + atipico); // Not a Number, NaN
+			alert("100 / '10' " + atipico2);
+			alert("A var atipico é um NaN?" + isNaN(atipico)); // devolve true, pq atipico é NaN, pois é uma divisão de um número por letras.
+			alert("NaN é de qual tipo?" + typeof(atipico)); // diz que é de tipo number kkkkk eu ainda não sei, mas vezes haver uma resposta para isso.
+			
+			// NÚMEROS COMO OBJETOS
+			var num = 123; // recomendável atribuir dessa maneira
+			var num2 = new Number(123); // NÃO RECOMENDÁVEL USAR NÚMEROS COMO OBJETOS
+			var num3 = new Number(123);
+			alert("num "+ typeof(num)); // dovolve Number
+			alert("num2 "+ typeof(num2)); // devolve Object
+			alert("num == num2 " + (num == num2)); // TRUE, o valor em si é igual
+			alert("num === num2 " + (num === num2)); // FALSE, o valor pode ser igual, mas são tipos diferentes
+			alert("num2 === num3 " + (num2 === num3)); // FALSE, o valor e o tipo são iguais, mas ele diz que é falso. por isso melhor NÃO USAR isso.
+			
+		
+			// PROPRIEDADES
+			// - MAX_VALUE
+			var maximo = Number.MAX_VALUE; alert("Máximo= " + maximo);
+			
+			// - MIN_VALUE
+			var minimo = Number.MIN_VALUE; alert("Mínimo= "+ minimo);
+			
+			// - NEGATIVE_INFINITY
+			var menos_infinito = Number.NEGATIVE_INFINITY; alert("menos infinito= "+menos_infinito);
+			
+			// - POSITIVE_INFINITY
+			var mais_infinito = Number.POSITIVE_INFINITY; alert("mais infinito= "+mais_infinito);
+			
+			// - NaN
+			var not_a_number = Number.NaN; alert("NaN= "+not_a_number);
+			
+			
+			// MÉTODOS
+			// - toFiced(<número decimal>): caractere com o número específico de decimais indicados. sem aspas
+			var x = 9.8765;
+			alert(x.toFixed(0)); // devolve 10, ele arredonda.
+			alert(x.toFixed(2)); // devolve 9.88, arredonda novamente e com dois números depois da vírgula
+			alert(x.toFixed(6)); // devolve 9.876500, como pedimos com seis casas depois da vírgula, ele devolve os zeros.
+			
+			// - toPrecision(<número de caracteres desejado>): 
+			var y = 9.8765;
+			alert(y.toPrecision()); // devolve 9.8765, o número normal, já que não especificamos os números de casas decimais.
+			alert(y.toPrecision(2)); // devolve 9.9, além de arredondar, ele começa a limitar os caracteres a partir do primeiro digito, e não só com os números depois da vírgula.
+			alert(y.toPrecision(6)); // devolve 9.87650, com apenas um 0 no fim, já que ele começa a contar caractere a partir do primeiro dígito e não depois da vírgula.
+			
+			
+			// - toExponential(<número de casa decimais>): caractere com o número arredondado para notação científica.
+			var z = 9.8765;
+			alert(z.toExponential(2)); // devolve 9.87e+0, que é a forma arredondada para notação cientifica
+			
+			
+			// - valueOf: devolve o valor primitivo de um objeto.
+			// - toString: muda a base numérica de um número decimal para hexadecimal, octal, binário, etc.
+			var j = 720;
+			alert(j.toString(2));
+			alert((720).toString(8));
+			alert((720+7).toString(16));
+		*/	
+			
+			// MÉTODOS GLOBAIS PARA CONVERTER VARIÁVEIS EM NÚMEROS.
+			// - Number(): devolve o valor numérico de uma variável.
+			alert(Number(true)); // devolve 1
+			alert(Number(false)); // devolve 0
+			alert(Number( new Date() )); // devolve o número de milisegundos desde o dia 1/1/1970
+			alert(Number("10")); // devolve o número dentro da string. no caso, 10.
+			alert(Number("Casa")); // devolve NaN.
+			
+			
+			// - parseInt() / parseFloat():
+			alert(parseInt("10.6")); // Devolve o 10. se usasse o parseFloat ele devolveria o 10.6
+			alert(parseInt("10 20")); // Devolve o primeiro número, o 10
+			alert(parseInt("10 Casa")); // Devolve o primeiro número, o 10
+			alert(parseInt("Casa 10")); // Devolve NaN
+			
+		</script>
+	</body>
+</html>

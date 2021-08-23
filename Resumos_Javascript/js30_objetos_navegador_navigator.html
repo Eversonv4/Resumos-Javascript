@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: Navigator</title>
+	</head>
+	
+	<body>
+		<p id="navegador"></p>
+		<script>
+			/*
+				CARACTERÍSTICAS:
+				- Guarda informações sobre o navegador.
+				- Não é um padrão, mas a maioria dos navegadores suportam esse objeto.
+			*/
+			
+			// PROPRIEDADES DO OBJETO NAVIGATOR
+			var text = "";
+			
+			// appCodeName: Codenome do navegador. por exemplo: mozilla, opera, etc.
+			text += "<br/>CodeName: " + navigator.appCodeName;
+			
+			// appName: appName do navegador. por exemplo: Netscape.
+			text += "<br/>AppName: " + navigator.appName;
+			
+			// appVersion: appVersion do navegador. por exemplo: 5.0 (Windows).
+			text += "<br/>AppVersion: " + navigator.appVersion;
+			
+			// product: motor do navegador. por exemplo: Gecko, que é um motor de layout com código aberto
+			text += "<br/>product: " + navigator.product;
+			
+			// platform: plataforma do navegador. por exemplo: Win32
+			text += "<br/>plataform: " + navigator.platform;
+			
+			// onLine: Se o navegador está online ou offline. importante pra saber se o user está conectado à internet.
+			text += "<br/>Online: " + navigator.onLine;
+			
+			// language: idioma do navegador.
+			text += "<br/>Idioma: " + navigator.language;
+			
+			// cookieEnabled: saber se estão ativos os cookies.
+			text += "<br/>Cookies: " + navigator.cookieEnabled;
+			
+			// userAgent: Retorna o cabeçalho do agente do usuário enviado pelo navegador para o servidor
+			text += "<br/>Usuário: " + navigator.userAgent;
+			
+			// geolocation: devolve um objeto geolocation que pode servir para localizar a posição do usuário.
+			text += "<br/>Geolocation: " + navigator.geolocation;
+			
+			// MÉTODO DO OBJETO NAVEGADOR
+			// - javaEnabled(): devolve true ou false se está ativado o java.
+			alert("Java está ativado? " + navigator.javaEnabled());
+			
+			document.getElementById("navegador").innerHTML = text;
+			
+		</script>
+	</body>
+</html>

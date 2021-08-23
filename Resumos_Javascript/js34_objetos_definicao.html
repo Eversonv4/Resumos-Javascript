@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos: Definição</title>
+	</head>
+	
+	<body>
+		<script>
+			// 1 - Definir e criar um objeto simples utilizando tipo literal (string).
+			var pessoa = {
+				nome: "Everson",
+				sobrenome: "Vinicius",
+				nascimento: 1999
+			};
+
+			// 2 - Definir e criar um objeto simples utilizando a palavra NEW.
+			var pessoa2 = new Object();
+			pessoa2.nome = "Soares";
+			pessoa2.sobrenome = "Nascimento";
+			pessoa2.nascimento = 1998;
+			
+			// 3 - Definir um construtor de um objeto e criar objetos do tipo construído.
+			function Pessoa(nom, sobrenom, nascim) {
+				this.nome = nom; // this está referenciada à Pessoa
+				this.sobrenome = sobrenom; // aqui a mesma coisa. é um jeito de escrever objeto.
+				this.ano = nascim; // mesma coisa aqui. nome, sobrenome e ano são propriedades do objeto Pessoa.
+			}
+			
+			var everson = new Pessoa("Everson", "Vinicius", 1999); // nesse caso o nome da variável seria equivalente a escrever "Pessoa.propriedade", nesse caso "everson.nome_da_propriedade" (nome, sobrenome, ano)
+			var jorge = new Pessoa("São", "Jorge", 9999);
+			
+			alert(everson.ano); // devolve igual aos valores da variável, no caso 1999
+			alert(jorge.nome);
+			
+			/*
+				THIS (palavra reservada):
+				- Faz referência ao proprietário da função que está sendo invocada.
+				- Faz referência ao objeto aonde a função é um método.
+			*/
+		</script>
+	</body>
+</html>

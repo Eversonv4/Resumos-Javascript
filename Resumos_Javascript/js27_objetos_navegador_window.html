@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: Window</title>
+	</head>
+	
+	<body>
+		<p id="janela"></p>
+		<script>
+			/*
+				Esses são os Objetos BOM - Browser Object Model (modelos de objetos de navegador)
+				
+				CARACTERÍSTICAS:
+				- Representa uma janela aberta em um navegador.
+				- Se uma janela tiver tags do tipo <iframe> o navegador criará um objeto window para o html inicial e um para cada <iframe>.
+				- Todos os objetos, funções, variáveis... são membros do objeto window: as funções são seus métodos; as variáveis globais e o DOM são propriedades.
+				- Nem todos os métodos servem para todos os navegadores: tem que testar a compatibilidade.
+			*/
+			
+			// PROPRIEDADES BÁSICAS DE WINDOW
+			window.name = "Minha janela";
+			var texto = "";
+			// Nome da janela
+			texto += "<br/>Nome: " + window.name;
+			// Tamanho da janela com toolbar e scrollbar
+			texto += "<br/>Largura externa: " + window.outerWidth;
+			texto += "<br/>Altura externa: " + window.outerHeight;
+			// Tamanho da janela sem toolbar nem scrollbar
+			texto += "<br/>Largura interna: " + window.innerWidth;
+			texto += "<br/>Altura interna: " + window.innerHeight;
+			// Scroll horizontal e vertical
+			texto += "<br/>Scroll horizontal: " + window.pageXOffset;
+			texto += "<br/>Scroll vertical: " + window.pageYOffset;
+			// Distância do canto superior esquerdo
+			texto += "<br/>Distância da esquerda: " + window.screenX;
+			texto += "<br/>Distância de cima: " + window.screenY;
+			
+			document.getElementById("janela").innerHTML = texto;
+		
+			
+			// PROPRIEDADES COM IFRAMES:
+			// - frames: devolve todos os elementos iframe da janela
+			// - frameElement: devolve o frame em que a janela está inserida.
+			// - length: devolve o número de frames que tem a janela.
+			
+			// PROPRIEDADES COM OUTRAS JANELAS
+			// - closed: devolve um boolean se a janela está fechada.
+			// - opener: devolve uma referência com a janela que criou a janela atual. O abridor da janela.
+			// - parent: devolve a janela pai da janela atual.
+			// - self: devolve a janela atual.
+			//O objeto window é um objeto Pai por excelência. o window sustena todos os outros demais objetos.
+			
+			// OUTROS OBJETOS DO NAVEGADOR:
+			/* 
+				- window.document
+				- window.navigator
+				- window.screen
+				- window.history
+				- window.location
+			*/
+		
+			// MÉTODOS DE WINDOW FUNDAMENTAIS
+			var minhaJanela; // criar fora das funções para poder usá-la a qualquer momento.
+			
+			// - open(<URL>,<nome>,<especificações>)
+			function criarJanela() {
+				// minhaJanela = window.open("http://www.naointendo.com.br");
+				minhaJanela = window.open("","","width=500, height=200");
+				minhaJanela.document.write("<h1>Minha Janela</h1>");
+			}
+			
+			// - close(): fecha uma janela específica.
+			function fecharJanela(){
+				minhaJanela.close();
+			}
+			
+			// - resizeBy(<Nº de pixels largura>,<Nº de pixels altura>): redimensiona uma janela em alguns pixels de seu tamanho atual. e vai aumentando quantas vezes a função foi chamada, indefinidamente.
+			function redimensionarJanela() {
+				minhaJanela.resizeBy(10,10);
+			}
+			
+			// - resizeTo(<Nº pixels largura>,<Nº de pixels altura>): redimensiona uma janela para um número de pixels indicado. dessa vez o tamanho é fixo, não importa quantas vezes ative a função, vai manter o tamanho passado por parâmetro.
+			
+			// - moveBy(<Nº de pixels>,<Nº de pixels>): move uma janela para um número de pixels em relação à sua posição atual.
+			function moverJanela() {
+				minhaJanela.moveBy(10,10);
+			}
+			
+			// - moveTo(<Nº de pixels>,<Nº de pixels>): move uma janela para uma posição específica.
+			
+			// - scrollBy(<Nº de pixels>,<Nº de pixels>): move a barra de scroll um número de picels partindo da posição atual.
+			
+			// - scrollTo(<Nº de pixels>,<Nº de pixels>): move a barra de scroll para uma posição determinada.
+			
+			// - focus(): põe o foco em uma janela indicada.
+			function focar() {
+				minhaJanela.focus();
+			}
+			
+			// - print(): imprime a janela indicada
+			function imprimir() {
+				//print(); // abre a janela pra imprimir, nesse caso imprime a janela atual.
+				minhaJanela.print(); // aqui especifica qual janela imprimir.
+				// window.print(): tbm é um jeito de imprimir a janela atual.
+			}
+			
+			// - stop(): parar o carregamento da página.
+			
+			
+		</script>
+		<button onclick="criarJanela()">Criar Janela</button>
+		<button onclick="fecharJanela()">Fechar Janela</button>
+		<button onclick="redimensionarJanela()">Redimensionar Janela</button>
+		<button onclick="moverJanela()">Mover Janela</button>
+		<button onclick="focar()">Focar Janela</button>
+		<button onclick="imprimir()">Imprimir Janela</button>
+	</body>
+</html>

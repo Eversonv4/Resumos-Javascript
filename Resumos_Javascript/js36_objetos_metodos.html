@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				SINTAXE DE CRIAÇÃO DE UM MÉTODO DE UM OBJETO:
+				- <nome_método> : function() {
+					// Instruções
+				}
+				
+				SINTAXE DE ACESSO À MÉTODOS DE UM OBJETO: sem os parênteses ele não executa, pois é uma função.
+				- <nome_objeto>.<nome_método>() 
+			*/
+			
+			var pessoa1 = {nome: "Everson",
+				sobrenome: "Vinicius",
+				nomeCompleto: function() {
+					return this.nome + " " + this.sobrenome;
+				}
+			}
+			
+			alert(pessoa1.nome);
+			alert(pessoa1.sobrenome);
+			alert(pessoa1.nomeCompleto());
+		</script>
+	</body>
+</html>

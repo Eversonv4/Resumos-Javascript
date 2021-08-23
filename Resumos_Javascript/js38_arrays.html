@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+	</head>
+	
+	<body>
+		
+		<script>
+			/*
+				CARACTERÍSTICAS:
+				- Armazena em uma mesma variável múltiplos valores:
+					- valores primitivos, objetos, etc.
+				- Se referencia com um índice numérico.
+				- OBS: Um objeto se referencia com um nome. 
+				- Pode armazenar diferentes tipos de dados. */
+			
+			/*
+				OPERAÇÕES BÁSICAS COM UM ARRAY:
+				Criar um Array: var nomeArray = [<valorees separados por vírgula>]; */
+				var animais = ["Gato","Gambá","Cobra"];
+				
+			/* 
+				var nomeArray = new Array(<Valores separados por vírgula>); */
+				var animais2 = new Array ("Peixe","Pato","Cavalo");
+				
+			/*
+				ACESSO AOS ELEMENTOS DE UM ARRAY:
+				nomeArray[<indice>]: Lembrando que o primeiro elemento é zero */
+				var meuAnimal = animais[0];
+			
+			/*
+				Mostrar todo o array utilizando instruções de mostrar (alert, document.write... */
+				alert(animais);
+				document.write(animais); // mostra na página, como se fosse html, e não no console.
+				
+			/*
+				PROPRIEDADES
+				- LENGTH: devolve a quantidade de elementos existém dentro do array. */
+				document.write("<br/>A quantidade de elementos do array 'animais' é: "+animais.length);
+				
+			/*
+				Mostrar os valores/elementos do array um a um: */
+				document.write("<br/><br/> Todos os elementos: ");
+				for (var i = 0; i < animais.length; i++) {
+					document.write("<br/>" + animais[i]);
+				}
+				
+			/*
+				MÉTODOS
+				- Array.isArray(<nome do array>) devolve true se for um objeto do tipo array, porque quando usamos typeof, ele trata array como um simples objeto */
+				document.write("<br/>É um array? "+ Array.isArray(animais));
+				
+			/*
+				- <nome do array> instanceof Array: devolve true se é um Array, ou false, se não for. */
+				document.write("<br/>Tem certeza? " + (animais instanceof Array));
+				
+			/*
+				MÉTODOS PARA MOSTRAR UM ARRAY
+				- toString(): converte o array em uma string. */
+				document.write("<br/>O array em tipo String é " + animais.toString());
+				
+			/*
+				- join(<separador>): converte o array para string separado por um separador indicado por parâmetro. */
+				document.write("<br/>O array com join: " + animais.join(" * "));
+				
+			/*
+				MÉTODOS PARA ADICOINAR, EXTRAIR OU DELETAR ELEMENTOS
+				- pop(): extrai o último elemento do array.
+				- shift(): extrai o primeiro elemento do array.
+				e tanto o último elemento quanto o primeiro podem armazenados em uma variável, ou não. */
+				var ultimo = animais.pop();
+				document.write("<br/>Depois de extrair "+ultimo+", permaneceram: " + animais.toString());
+				
+				var primeiro = animais.shift();
+				document.write("<br/>Depois de extrair "+primeiro+" e "+ultimo+", permaneceram: "+ animais.toString());
+				
+			/*
+				- delete nomeArray[<indice>]: elimina o elemento e o transforma em undefined. 
+				- push(<elemento>): ao contrário de pop(), ele adiciona elementos ao final.
+				- unshift(): ao contrário de shift(), ele adiciona elementos no início. */
+				animais.push("Pardal");
+				document.write("<br/>Depois de adicionar Pardal, ficou: " + animais.toString());
+			
+			/*
+				Nota: podemos adicionar elementos também com animais[<indice>] = <elemento>; mas precisa
+				ter cuidado para não sobrescrever um elemento ou deixar lacunas. */
+				
+			/*	
+				- splice(<posição para inserir/apagar>, <OPCIONAL: elementos a serem apagados>, [<OPCIONAL: elementos a serem adicionados separados por vírgula>]): Adiciona/Remove elementos de um array */
+				animais.splice(1, 1, "Vaca", "Porco");
+				document.write("<br/>Depois de adicionar 2 e apagar 1, sobraram: " + animais.toString());
+				
+			/*
+				-slice(<posição inicial>,<OPCIONAL: posição final>): seleciona parte de um array e devolve como um novo array. E não afeta o array original, ele permanece com todos os seus elementos. Ele não engloba o elemento da posição final, só o que vem antes. */
+				var subarray = animais.slice(1, 3);
+				document.write("<br/>O subarray nas posições entre 1 e 3 é: " + subarray.toString());
+				
+			/*
+				- concat(<Lista de arrays separados por vírgula>): junta dois ou mais arrays, e retorna uma cópia dos arrays combinados.  */
+				var maisAnimais = ["Burro","Galinha"];
+				animais = animais.concat(maisAnimais);
+				document.write("<br/>O array completo é: " + animais.toString());
+				
+			/*
+				-copyWithin(target, start, end): 
+					TARGET - Obrigatório. The index position to copy the elements to; 
+					START - Opicional. The index position to start copying elements from (default is 0); 
+					END - Opicional. The index position to stop copying elements from (default is array.length) 
+				
+				- fill(<elemento>, start, end): substitui todos os elementos do array pelo elemento indicado. Seus parâmetros seguem o mesmo padrão do copyWithin. */
+				
+			/*
+				MÉTODOS PARA BUSCAR 
+				- indexOf(<elemento>,<OPICIONAL: posição por onde começar>): procura no array por um elemento e retorna sua posição.
+				- lastIndexOF(<elemento>,<OPCIONAL: posição>): procura no array por um elemento, começando pelo final e retorna sua posição.  */
+				document.write("<br/>A primeira posição de Burro é: " + animais.indexOf("Burro"));
+				
+			/*
+				MÉTODOS PARA ORDENAR E INVERTER A ORDEM DO ARRAY
+				- reverse(): inverte a ordem de um array. */
+				animais.reverse();
+				document.write("<br/>O array depois de invertido fica: " + animais.toString());
+				
+			/*
+				- sort(): ordena o array. Se forem elementos do tipo string, eles ficarão em ordem alfabética.
+				Se a intenção for ordenar números, eles sendo string não é a melhor opção.*/
+				animais.sort();
+				document.write("<br/>O array depois de ser ordenado fica: " + animais.toString());
+					
+		</script>
+	</body>
+</html>

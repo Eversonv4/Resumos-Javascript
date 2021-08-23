@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Funções Anônimas </title>
+	</head>
+	
+	<body>
+		<script>
+			// Sintaxe de uma função não-anônima
+			// function nome (<parâmetros>) { <intruções> }
+			
+			// Sintaxe de uma função anônima
+			//var produto = function (a, b) { return a * b; };
+			//var resultado = produto(3, 6);
+			//alert(resultado);
+			
+			// O construtor de função()
+			var minhaFuncao = new Function ("a", "b", "return a*b;");
+			var resultado2 = minhaFuncao(4, 5);
+			alert(resultado2);
+			
+			// Funções Anônimas Autoinvocadas (IIFE)
+			// O esqueleto: (function () { } )();
+			// ela é invocada logo após ser criada, não depois de ser analizada.
+			(function() { alert("Olá");})(); // bom, o título já diz tudo. ela se invoca devido aos parênteses no fim.
+			
+			
+		</script>
+	</body>
+</html>

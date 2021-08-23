@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<p id="relogio"></p>
+		<script>
+			/*
+				EVENTOS DE TEMPO:
+				- O objeto window permite executar códigos em intervalos de tempo.
+				- Há 3 métodos: setTimeout, clearTimeout, setInterval
+			*/
+			
+			// - setTimeout(<função>,<milisegundos>); precisa indicar quantos segundos tem que passar antes que a função indicada no primeiro parâmetro se execute.
+			function saudar() {
+				alert("Olá");
+			}
+			
+			// - clearTimeout(<variável timeout>): se atribuirmos um "setTimeout" a uma variável, podemos parar sua execução com "clearTimeout". 
+			
+			// - setInterval(<função>,<milisegundos>): Repete uma função a cada intervalo de tempo.
+			var intervalo = setInterval(relog, 1000);
+			
+			function relog() {
+				var data = new Date(); // data atual
+				document.getElementById("relogio").innerHTML = data.getSeconds();
+			}
+			
+			
+		</script>
+			<button onclick="setTimeout(saudar, 3000)">Saudar</button>
+			<button onclick="sau = setTimeout(saudar, 3000)">Saudar com variável</button>
+			<button onclick="clearTimeout(sau)">Cancelar execução</button>
+			<button onclick="clearTimeout(intervalo)">Cancelar relógiio</button>
+	</body>
+</html>

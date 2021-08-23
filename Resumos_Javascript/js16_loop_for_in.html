@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Repetições: loop FOR IN</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				- Se usa o for in para nos mover pelas propriedades de um objeto.
+				- Declara uma variável qualquer, no caso "prop", ela vai assumir o papel de índice de um array
+				- Nota-se que o objeto animal, ao entrar na estrutura FOR IN, assume o papel de array.
+				- Fora da estrutura FOR IN, animal continua fazendo papel de objeto.
+			*/
+			var animal = {nome: "Everson", tipo: "Cachorro", raca: "Emborca-lata", idade: 22};
+			
+			var prop;
+
+			for (prop in animal) {
+				alert(animal[prop]);
+			}
+			
+			alert(animal.nome);
+		</script>
+	</body>
+</html>

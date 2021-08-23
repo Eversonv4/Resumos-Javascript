@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos do Navegador: Caixas de Diálogos</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				Temos 3 tipos de caixas de diálogos em Javascript.
+				- alert(<menssagem>);
+				
+				- prompt("menssagem", "texto padrão"): mostra uma mensagem ao usuário e um campo que pode conter um texto padrão. O que o usuário inserir será armazenado em uma variável à qual é atribuída.
+				
+				- confirm(<menssagem>); mostra uma mensagem ao usuário e dois botões. O que o usuário inserir será armazenado em uma variável à qual é atribuída. Se o usuário clica em "OK", devolve True; Se clica em "Cancelar", fecha a janela e devolve False.
+			*/
+			alert("Bem-vindo!");
+			var resposta = prompt("Qual é o seu nome?", "Introduza seu nome");
+			var resposta2 = confirm("Gosta de Javascript?");
+				if (resposta2==true) {alert("Estou feliz");} else {alert("Que pena");}
+				alert((resposta2) ? "Fico feliz que goste de javascript" : "Uma pena que não goste de javascript");
+			alert(resposta);
+			alert(resposta2);
+			
+		</script>
+	</body>
+</html>

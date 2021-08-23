@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Objetos: Protótipos</title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+				Sintaxe de criação de um protótipo de um objeto usando a função construtor:
+				- "this" faz referência ao próprio objeto. grosseiramente falando this == objeto.
+			*/
+			function Pessoa (name, seconame, birth) {
+				this.nome = name;
+				this.sobrenome = seconame;
+				this.ano = birth;
+				
+				this.nomeCompleto = function() {
+						return this.nome + " " + this.sobrenome;
+				}
+			}
+			// o método "nomeCompleto" foi adicionado à esse protótipo e pode ser acessado usando:
+			// <nome_objeto>.<nome_propriedade/método>  numa boa.
+			
+			var everson = new Pessoa ("Everson", "Vinicius", "1999");
+			var motoko = new Pessoa ("Motoko", "Kuzanagi", "9999");
+			
+			/*
+				Adicionar uma propriedade a um objeto:
+			*/
+			everson.nacionalidade = "Brasileira";
+			// essa propriedade é passada exclusivamente para o objeto everson, não para o protótipo, logo, a motoko não recebeu essa propriedade nacionalidade.
+			
+			/*
+				Adicionar um método a um objeto:
+			*/
+			// Essa propriedade também só foi adicionada à everson, e não a motoko.
+			everson.nascimento = function() {
+				return "Nasceu no ano " + this.ano;
+			}
+			
+			alert(everson.nascimento()+"\n"+everson.nomeCompleto());
+			
+			/*
+				ADICIONANDO UMA PROPRIEDADE À UM PROTÓTIPO:
+				- Adicionando diretamente sobre a definição do protótipo
+				- Usando a sintaxe: <nome_objeto>.prototype.<propriedade>
+			*/
+			Pessoa.prototype.morte = "2000"; // isso se tornou uma propriedade padrão do protótipo, e obviamente, dos objetos.
+			
+			/*
+				ADIDIONANDO UM MÉTODO A UM PROTÓTIPO
+				- Adicionando diretamente sobre a definição de protótipo.
+				- Usando a sintaxe: <nome_objeto>.prototype.<método> = ...resto das informações do método
+			*/
+			Pessoa.prototype.falecimento = function() {
+				return "Ano de falecimento " + this.morte;
+			}
+			var alan = new Pessoa("Alan", "Turing", "1912");
+			alert(alan.nome);
+			alert(alan.falecimento());
+		</script>
+	</body>
+</html>
